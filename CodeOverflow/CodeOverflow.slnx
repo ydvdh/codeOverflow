@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CodeOverflow.AppHost/CodeOverflow.AppHost.csproj" />
+  <Project Path="CodeOverflow.ServiceDefaults/CodeOverflow.ServiceDefaults.csproj" />
+</Solution>
