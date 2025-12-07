@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Services/">
+    <Project Path="Question.API/Question.API.csproj" />
+  </Folder>
   <Project Path="CodeOverflow.AppHost/CodeOverflow.AppHost.csproj" />
   <Project Path="CodeOverflow.ServiceDefaults/CodeOverflow.ServiceDefaults.csproj" />
 </Solution>
