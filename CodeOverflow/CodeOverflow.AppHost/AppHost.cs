@@ -18,16 +18,24 @@ var typesense = builder.AddContainer("typesense", "typesense/typesense", "29.0")
 
 var typeSenseContainer = typesense.GetEndpoint("typesense");
 
+var rabbitmq = builder.AddRabbitMQ("messaging")
+    .WithDataVolume("rabbitmq-data")
+    .WithManagementPlugin(port: 15672);
+
 var questionService =  builder.AddProject<Projects.Question_API>("question-srv")
     .WithReference(keycloak)
     .WithReference(questionDb)
+    .WithReference(rabbitmq)
     .WaitFor(keycloak)
-    .WaitFor(questionDb);
+    .WaitFor(questionDb)
+    .WaitFor(rabbitmq); ;
 
 var searchService = builder.AddProject<Projects.Search_API>("search-svc")
     .WithEnvironment("typesense-api-key", typesenseApiKey)
     .WithReference(typeSenseContainer)
-    .WaitFor(typesense);
+    .WithReference(rabbitmq)
+    .WaitFor(typesense)
+    .WaitFor(rabbitmq);
 
 builder.Build().Run();
 

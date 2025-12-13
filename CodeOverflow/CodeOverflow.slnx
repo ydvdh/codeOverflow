@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/common/">
+    <Project Path="Contracts/Contracts.csproj" Id="0be5db3b-591b-4525-bc7c-1641cd34f804" />
+  </Folder>
   <Folder Name="/Services/">
     <Project Path="Question.API/Question.API.csproj" />
     <Project Path="Search.API/Search.API.csproj" />

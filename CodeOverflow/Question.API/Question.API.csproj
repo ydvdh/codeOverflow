@@ -18,10 +18,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="WolverineFx.RabbitMQ" Version="5.7.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CodeOverflow.ServiceDefaults\CodeOverflow.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\Contracts\Contracts.csproj" />
   </ItemGroup>
 
 </Project>
